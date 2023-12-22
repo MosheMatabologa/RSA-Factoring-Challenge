@@ -6,17 +6,17 @@ import sys
 def pollard_rho(n):
     if n % 2 == 0:
         return 2
-    
+
     x = 2
     y = 2
-    d = 1 
+    d=1 
     # I will Define the function f(x) using a lambda function
     f = lambda x: (x**2 + 1) % n
     # Loop until a non-trivial factor is found
     while d == 1:
         # Generate new values for x using the function f(x)
         x = f(x)
-	
+
         # Generate new values for y using the function f(f(y))
         y = f(f(y))
         # Calculate the greatest common divisor between |x - y| and n
